@@ -1,0 +1,193 @@
+body {
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: pink; /*in case image doesn't load*/
+  font-family: Poppins, sans-serif;
+}
+
+header {
+  position: fixed;
+  height: 3em;
+  width: 100%;
+  z-index: 1000;
+  padding: 0.5em 1.5em 2em 1.5em;
+
+  background-color: rgb(242, 255, 255);
+  box-shadow: 0 0 0.4375em 0.3125em rgba(0, 0, 0, 0.3);
+}
+
+header > h1 {
+  color: rgb(3, 0, 41);
+  font-size: 3em;
+  font-family: Source Code Pro, monospace;
+  font-weight: 600;
+  font-style: italic;
+  text-align: center;
+  text-decoration: underline magenta 0.125em;
+}
+
+.title {
+  font-size: 1.2em;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+
+  /* for ombre text, will not work on Firefox as there is no standard property :( */
+  /*make the background a gradient*/
+  background: linear-gradient(to bottom, #ff99ff 0%, #3399ff 100%);
+
+  /*clip the background gradient to the text */
+  -webkit-background-clip: text;
+
+  /*make original text transparent*/
+  -webkit-text-fill-color: transparent;
+}
+
+main {
+  max-width: 65em;
+  margin: auto;
+  padding: 5em 3em 3em 3em;
+
+  background: rgba(252, 236, 250, 0.8);
+  border-style: solid double; /* for a mixed border */
+  border-color: rgba(255, 255, 255, 0.7);
+  border-width: 1em;
+  backdrop-filter: blur(0.5em); /* for a frosted glass effect */
+  box-shadow: 0 0 0.625em 0.875em rgba(255, 221, 252, 0.69);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 2em; /* gap between items on the x-axis*/
+}
+
+.description {
+  flex: 0 0 100%;
+  border-bottom: 0.25em solid cyan;
+  padding-bottom: 2em;
+  margin-bottom: 1em;
+}
+
+a {
+  font-style: italic;
+}
+
+article {
+  flex: 1 1 30%;
+}
+
+article h2 {
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 2em;
+  background: linear-gradient(to bottom, #ff99ff 0%, #3399ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+article h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 2em;
+  color: #043f7a;
+  text-decoration: underline 0.15em;
+}
+
+article p {
+  font-size: 1.05em;
+  line-height: 1.2em;
+}
+
+img {
+  display: block;
+  width: 35em;
+}
+
+figure {
+  flex: 0 0 35em;
+  /* as the parent of an aboslutely positioned element,
+   this element needs to be relatively postioned or else figcaption will 
+   be outside of the flexbox*/
+  position: relative;
+  margin: 2em 0;
+  box-shadow: 0 0.3em 0.5em rgba(0, 0, 0, 0.4);
+}
+
+figcaption {
+  position: absolute;
+  bottom: 2em;
+  left: -2em;
+
+  width: 12em;
+
+  font-size: 0.9em;
+  line-height: 1.3em;
+  font-weight: 300;
+
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    /*33% = 1st color starts shfiting to the 2nd color @ 33% of the whole element*/
+      rgba(255, 255, 255, 0.9) 33%,
+    rgba(204, 255, 255, 0.95) 100%
+  );
+  box-shadow: 0 0.275em 0.275em rgba(0, 0, 0, 0.2);
+  padding: 0.5em;
+  border: none;
+  border-radius: 1em;
+}
+
+cite {
+  font-style: italic;
+}
+
+footer {
+  margin: 2em auto;
+  text-align: center;
+  color: #ffffff;
+  background: #232323;
+  width: fit-content;
+  padding: 0.5em;
+  font-size: 0.8em;
+}
+
+footer a {
+  color: cyan;
+}
+
+footer a:visited {
+  color: cyan;
+}
+
+/* order of elements in flexbox*/
+.description {
+  order: 1;
+}
+
+.macintoshImg {
+  order: 1;
+}
+
+.macintoshArticle {
+  order: 2;
+}
+
+.blankArticle {
+  order: 3;
+}
+
+.blankImg {
+  order: 4;
+}
+
+.vaperrorImg {
+  order: 5;
+}
+
+.vaperrorArticle {
+  order: 6;
+}
